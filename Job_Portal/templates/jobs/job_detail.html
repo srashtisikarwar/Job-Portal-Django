@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{% load static humanize %}  {# humanize is for intcomma #}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/job_detail.css' %}">
+{% endblock %}
+
+{% block title %}{{ job.title }} - Job Portal{% endblock %}
+
+
+{% block content %}
+
+<!-- Header Section with Job Info -->
+<section class="bg-white border-bottom py-5">
+    <div class="container">
+
+        <div class="row align-items-center">
+
+
+            <!-- COMPANY LOGO -->
+            <div class="col-auto">
+                {% if job.employer.employerprofile.company_logo %}
+                    <img src="{{ job.employer.employerprofile.company_logo.url }}"
+                         alt="Company Logo"
+                         class="rounded border"
+                         style="width:80px; height:80px; object-fit:contain;">
+                {% else %}
+                    <div class="rounded border d-flex align-items-center justify-content-center bg-light"
+                         style="width:80px; height:80px;">
+                        <strong class="text-muted fs-4">
+                            {{ job.employer.employerprofile.company_name|slice:":1" }}
+                        </strong>
+                    </div>
+                {% endif %}
+            </div>
+
+            <!-- JOB INFO -->
+            <div class="col-md-7">
+                <h1 class="fw-bold mb-1">{{ job.title }}</h1>
+
+                <p class="text-muted mb-2 fs-5">
+                    {{ job.employer.employerprofile.company_name }}
+                    <span class="mx-2">•</span>
+                    {{ job.location }}
+                </p>
+
+                {% if job.salary %}
+                    {% if job.salary >= 100000 %}
+                        {# Convert monthly to yearly LPA for high salaries #}
+                        {% with yearly_lpa=job.salary|floatformat:0|add:"0"|divisibleby:100000 %}
+                        <span class="badge bg-success fs-6 px-3 py-2">
+                            ₹ {{ job.salary|intcomma }} / month
+                        </span>
+                        {% endwith %}
+                    {% else %}
+                        <span class="badge bg-success fs-6 px-3 py-2">
+                            ₹ {{ job.salary|intcomma }} / month
+                        </span>
+                    {% endif %}
+                {% else %}
+                    <span class="badge bg-secondary fs-6 px-3 py-2">
+                        Negotiable
+                    </span>
+                {% endif %}
+            </div>
+
+            <!-- APPLY BUTTON -->
+            <div class="col-md-3 text-md-end mt-4 mt-md-0">
+                {% if user.is_authenticated %}
+                    {% if user.role == 'candidate' %}
+                        <a href="{% url 'apply_job' job.id %}" 
+                           class="btn btn-primary btn-lg w-100">
+                            Apply Now
+                        </a>
+                    {% elif user.role == 'employer' %}
+                        <button class="btn btn-secondary btn-lg w-100" disabled>
+                            Employers cannot apply
+                        </button>
+                    {% endif %}
+                {% else %}
+                    <a href="{% url 'login' %}?next={% url 'apply_job' job.id %}"
+                       class="btn btn-primary btn-lg w-100">
+                        Login as Candidate to Apply
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Job Details Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <!-- Main Content -->
+            <div class="col-lg-8">
+                <h2 class="fw-bold mb-4">Job Description</h2>
+                <p class="text-muted fs-5">{{ job.description }}</p>
+
+                <h4 class="mt-4">Requirements</h4>
+                {% if job.requirements %}
+                    <p>{{ job.requirements }}</p>
+                {% else %}
+                    <p class="text-muted">No specific requirements mentioned.</p>
+                {% endif %}
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold mb-3">Job Details</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-3">
+                                <strong>Job Type:</strong>
+                                <span class="badge bg-info">{{ job.job_type }}</span>
+                            </li>
+                            <li class="mb-3">
+                                <strong>Experience:</strong>
+                                <p class="text-muted mb-0">{{ job.experience_level }}</p>
+                            </li>
+                            <li class="mb-3">
+                                <strong>Posted:</strong>
+                                <p class="text-muted mb-0">{{ job.created_at|date:"d M Y" }}</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

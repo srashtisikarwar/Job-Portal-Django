@@ -1,0 +1,147 @@
+/* ===============================
+   JOB DETAIL PAGE – DARK THEME
+   =============================== */
+
+/* Page background */
+body {
+    background-color: #0f172a; /* deep navy */
+    color: #e5e7eb;
+}
+
+/* Header section */
+section.bg-white {
+    background-color: #020617 !important;
+    border-bottom: 1px solid #1e293b;
+}
+
+/* Company logo container fallback */
+.bg-light {
+    background-color: #020617 !important;
+}
+
+/* Job title */
+h1 {
+    color: #f8fafc;
+}
+
+/* Company + location text */
+.text-muted {
+    color: #94a3b8 !important;
+}
+
+/* Salary badge */
+.badge.bg-success {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: #022c22;
+    font-weight: 600;
+}
+
+/* Negotiable badge */
+.badge.bg-secondary {
+    background-color: #334155;
+    color: #e5e7eb;
+}
+
+/* Apply button */
+.btn-primary {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    border: none;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #1d4ed8, #1e40af);
+}
+
+/* Disabled employer button */
+.btn-secondary {
+    background-color: #334155;
+    border: none;
+    color: #94a3b8;
+}
+
+/* Job description section */
+section.py-5 {
+    background-color: #020617;
+}
+
+/* Section headings */
+h2, h4, h5 {
+    color: #f1f5f9;
+}
+
+/* Description text */
+p {
+    color: #cbd5f5;
+    line-height: 1.7;
+}
+
+/* Sidebar card */
+.card {
+    background-color: #020617;
+    border: 1px solid #1e293b;
+    border-radius: 14px;
+}
+
+/* Card title */
+.card-title {
+    color: #f8fafc;
+}
+
+/* Job details labels */
+.card-body strong {
+    color: #e5e7eb;
+}
+
+/* Job type badge */
+.badge.bg-info {
+    background-color: #0ea5e9;
+    color: #022c22;
+    font-weight: 600;
+}
+
+/* Borders */
+.border {
+    border-color: #1e293b !important;
+}
+
+/* Logo image */
+img.rounded {
+    background-color: #020617;
+    padding: 6px;
+}
+
+
+/* ===============================
+   RESPONSIVE DESIGN
+   =============================== */
+
+@media (max-width: 991px) {
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    .btn-lg {
+        font-size: 1rem;
+        padding: 10px 14px;
+    }
+}
+
+@media (max-width: 767px) {
+    section.bg-white {
+        text-align: center;
+    }
+
+    .col-auto {
+        margin-bottom: 15px;
+    }
+
+    .badge {
+        display: inline-block;
+        margin-top: 10px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}

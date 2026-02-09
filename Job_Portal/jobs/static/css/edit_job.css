@@ -1,0 +1,91 @@
+/* Card Styling */
+.card {
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Card Header */
+.card-header {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    background: linear-gradient(90deg, #0d6efd, #0062cc);
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+/* Section Titles */
+.form-section-title {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+    color: #0d6efd;
+    text-transform: uppercase;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 0.3rem;
+}
+
+/* Floating labels */
+.form-floating > label {
+    font-weight: 500;
+}
+
+/* Input fields */
+.form-control, .form-select, textarea.form-control {
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease-in-out;
+    padding: 0.75rem 0.75rem;
+}
+
+.form-control:focus, .form-select:focus, textarea.form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13,110,253,0.25);
+    background-color: #f8f9fa;
+}
+
+/* Textarea */
+textarea.form-control {
+    resize: vertical;
+}
+
+/* Buttons */
+.btn-primary {
+    border-radius: 8px;
+    font-weight: 600;
+    padding: 0.65rem 1.2rem;
+    font-size: 1rem;
+    transition: 0.3s all;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+}
+
+.btn-secondary {
+    border-radius: 8px;
+    font-weight: 500;
+    padding: 0.65rem 1.2rem;
+    font-size: 1rem;
+}
+
+/* Icons for inputs */
+.input-group-text {
+    background-color: #f8f9fa;
+    border-radius: 8px 0 0 8px;
+    border-right: 0;
+}
+
+/* Responsive spacing */
+.row.g-3 > .col-md-6 {
+    margin-bottom: 1rem;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.container {
+    max-width: 900px;
+}

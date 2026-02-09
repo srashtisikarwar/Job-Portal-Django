@@ -1,0 +1,227 @@
+/* ======================================
+   GLOBAL DASHBOARD STYLING
+====================================== */
+* {
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+/* Container padding */
+.container.py-5 {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Header */
+.d-flex.justify-content-between.align-items-center.mb-4 h2 {
+    font-size: 1.8rem;
+}
+
+.d-flex.justify-content-between.align-items-center.mb-4 p {
+    font-size: 0.95rem;
+    color: #6c757d;
+}
+
+/* Buttons */
+.btn {
+    border-radius: 6px;
+    font-size: 0.85rem;
+    padding: 6px 12px;
+}
+
+.btn-primary {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    color: #fff;
+}
+.btn-primary:hover {
+    background-color: #0b5ed7;
+    border-color: #0a58ca;
+}
+
+.btn-outline-primary {
+    color: #0d6efd;
+    border-color: #0d6efd;
+}
+.btn-outline-primary:hover {
+    background-color: #0d6efd;
+    color: #fff;
+    border-color: #0b5ed7;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #212529;
+}
+.btn-warning:hover {
+    background-color: #e0a800;
+    border-color: #d39e00;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: #fff;
+}
+.btn-danger:hover {
+    background-color: #bb2d3b;
+    border-color: #b02a37;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: #fff;
+}
+.btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+
+.btn-info {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+    color: #fff;
+}
+.btn-info:hover {
+    background-color: #138496;
+    border-color: #117a8b;
+}
+
+/* Cards */
+.card {
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+.card:hover {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Card headers */
+.card-body h5.fw-bold {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+.card-body p.text-muted {
+    font-size: 0.9rem;
+}
+
+/* Applicants List */
+.list-group-item {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+}
+
+.list-group-item strong {
+    font-weight: 600;
+}
+
+/* Badges */
+.badge.bg-primary {
+    font-size: 0.75rem;
+}
+
+/* Modal */
+.modal-content {
+    border-radius: 10px;
+}
+
+/* Alerts */
+.alert {
+    border-radius: 6px;
+}
+
+/* ======================================
+   DARK THEME
+====================================== */
+.theme-wrapper.dark-theme {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.theme-wrapper.dark-theme .card {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    color: #fff;
+}
+
+.theme-wrapper.dark-theme .btn-primary {
+    background-color: #0b5ed7;
+    border-color: #0a58ca;
+}
+
+.theme-wrapper.dark-theme .btn-outline-primary {
+    color: #4dabff;
+    border-color: #4dabff;
+}
+.theme-wrapper.dark-theme .btn-outline-primary:hover {
+    background-color: #4dabff;
+    color: #fff;
+    border-color: #0b5ed7;
+}
+
+.theme-wrapper.dark-theme .btn-warning {
+    background-color: #e0a800;
+    border-color: #d39e00;
+    color: #212529;
+}
+.theme-wrapper.dark-theme .btn-warning:hover {
+    background-color: #c69500;
+    border-color: #a87b00;
+}
+
+.theme-wrapper.dark-theme .btn-danger {
+    background-color: #bb2d3b;
+    border-color: #b02a37;
+}
+
+.theme-wrapper.dark-theme .btn-info {
+    background-color: #138496;
+    border-color: #117a8b;
+}
+
+.theme-wrapper.dark-theme .list-group-item {
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    color: #fff;
+}
+
+.theme-wrapper.dark-theme .badge.bg-primary {
+    background-color: #4dabff;
+    color: #121212;
+}
+
+.theme-wrapper.dark-theme .modal-content {
+    background-color: #2a2a2a;
+    color: #fff;
+}
+/* Dark mode text-muted fix */
+.theme-wrapper.dark-theme .text-muted {
+    color: #b0b0b0 !important; /* light gray for visibility in dark mode */
+}
+/* Highlight alert link in DARK THEME */
+.theme-wrapper.dark-theme .alert-link {
+    color: #4dabff;              /* bright blue */
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.theme-wrapper.dark-theme .alert-link:hover {
+    color: #82c7ff;
+    text-decoration: none;
+}
+.theme-wrapper.dark-theme .alert-link {
+    color: #121212;
+    background-color: #4dabff;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.theme-wrapper.dark-theme .alert-link:hover {
+    background-color: #82c7ff;
+}

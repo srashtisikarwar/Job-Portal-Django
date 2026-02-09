@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+<title>Register - Job Portal</title>
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center flex-column mt-5">
+
+     <div class="card shadow p-5 register-card">
+
+        <h1 class="mb-3 text-center">👋 Create Account</h1>
+
+        <p class="lead mb-4 text-center">
+            Register to view and apply for jobs.
+        </p>
+
+        <!-- ✅ REGISTER FORM -->
+        <form method="POST" action="{% url 'register' %}">
+            {% csrf_token %}
+
+            {% if form.errors %}
+                <div class="alert alert-danger">
+                    {{ form.errors }}
+                </div>
+            {% endif %}
+
+            {{ form.as_p }}
+
+            <button type="submit" class="btn btn-primary w-100">
+                Register
+            </button>
+        </form>
+
+        <p class="text-center mt-3">
+            Already have an account?
+            <a href="{% url 'login' %}">Login</a>
+        </p>
+
+        <small class="text-muted d-block mt-3 text-center">
+            Registration is quick and only takes a minute.
+        </small>
+    </div>
+
+    <!-- Illustration -->
+    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+     alt="Register"
+     class="mt-4 register-illustration">
+
+</div>
+{% endblock %}

@@ -1,0 +1,235 @@
+/* Bootstrap Job Portal - Light & Dark Theme */
+
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #64748b;
+    --light-bg: #ffffff;
+    --light-text: #1f2937;
+    --dark-bg: #1f2937;
+    --dark-text: #f3f4f6;
+}
+
+/* Light Theme (Default) */
+body {
+    background-color: var(--light-bg);
+    color: var(--light-text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Theme */
+body.dark-theme {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+/* Header/Navbar */
+.navbar {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #1e40af 100%);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme .navbar {
+    background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #ffffff !important;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #1e40af 100%);
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.dark-theme .hero-section {
+    background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+}
+
+.hero-section h1 {
+    font-weight: 800;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-section p {
+    font-size: 1.25rem;
+    opacity: 0.95;
+}
+
+/* Job Cards */
+.job-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    background-color: var(--light-bg);
+}
+
+.dark-theme .job-card {
+    background-color: #374151;
+    border-color: #4b5563;
+}
+
+.job-card:hover {
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.1);
+    transform: translateY(-4px);
+}
+
+.job-title {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.company-name {
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.job-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.job-badge {
+    background-color: #dbeafe;
+    color: var(--primary-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.dark-theme .job-badge {
+    background-color: #1e3a8a;
+    color: #93c5fd;
+}
+
+.job-description {
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8;
+    border-color: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.btn-outline-secondary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Search Section */
+.search-section {
+    background-color: #f9fafb;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+}
+
+.dark-theme .search-section {
+    background-color: #374151;
+}
+
+.search-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    .search-form {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: var(--light-bg);
+    border-top: 1px solid #e5e7eb;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+.dark-theme footer {
+    background-color: #1f2937;
+    border-top-color: #4b5563;
+}
+
+footer p {
+    color: var(--secondary-color);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    color: white;
+}
+
+.theme-toggle:hover {
+    opacity: 0.8;
+}
+
+/* Smooth Transitions */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+.animated-strip {
+    overflow: hidden;
+    background: linear-gradient(270deg, #2563eb, #1e40af, #0ea5e9);
+    background-size: 600% 600%;
+    border-radius: 12px;
+    padding: 14px 0;
+    animation: gradientMove 8s ease infinite;
+}
+
+.strip-content {
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+

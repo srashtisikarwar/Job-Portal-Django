@@ -1,0 +1,48 @@
+# -----------------------
+# Python
+# -----------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# -----------------------
+# Virtual Environments
+# -----------------------
+myenv/
+venv/
+env/
+.venv/
+
+# -----------------------
+# Django specific
+# -----------------------
+db.sqlite3
+*.log
+media/
+
+# Migration cache
+*/migrations/__pycache__/
+
+# -----------------------
+# Environment variables
+# -----------------------
+.env
+
+# -----------------------
+# Static collected files
+# -----------------------
+staticfiles/
+
+# -----------------------
+# IDE / Editor
+# -----------------------
+.vscode/
+.idea/
+*.swp
+
+# -----------------------
+# OS files
+# -----------------------
+Thumbs.db
+.DS_Store

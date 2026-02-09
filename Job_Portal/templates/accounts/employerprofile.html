@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/employer_profile.css' %}">
+{% endblock %}
+
+{% block title %}Employer Profile | JobPortal{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h2 class="page-title">Employer Profile</h2>
+
+    <!-- Profile Card -->
+    {% if profile %}
+    <div class="profile-card">
+        {% if profile.company_logo %}
+        <img src="{{ profile.company_logo.url }}" alt="{{ profile.company_name }}">
+        {% else %}
+        <img src="{% static 'images/default_logo.png' %}" alt="Company Logo">
+        {% endif %}
+        <div class="profile-info">
+            <h4>{{ profile.company_name }}</h4>
+            <p>📍 {{ profile.company_location }}</p>
+            {% if profile.company_website %}
+            <p>🌐 <a href="{{ profile.company_website }}" target="_blank">{{ profile.company_website }}</a></p>
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Profile Form -->
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="form-section">
+            <div class="form-section-title">Company Info</div>
+            {{ form.company_name }}
+        </div>
+
+        <div class="form-section">
+            <div class="form-section-title">Website & Location</div>
+            {{ form.company_website }}
+            {{ form.company_location }}
+        </div>
+
+        <div class="form-section">
+            <div class="form-section-title">Company Logo</div>
+            <div class="form-file">
+                {{ form.company_logo }}
+                {% if profile.company_logo %}
+                <img src="{{ profile.company_logo.url }}" alt="Logo Preview">
+                {% endif %}
+            </div>
+        </div>
+
+        <button type="submit">Save Profile</button>
+    </form>
+</div>
+{% endblock %}

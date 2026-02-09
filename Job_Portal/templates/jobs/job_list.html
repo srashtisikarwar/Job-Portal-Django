@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Job Listings{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/job_list.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container py-4">
+
+    <!-- PAGE HEADING -->
+    <h2 class="mb-4 fw-bold">Job Listings</h2>
+
+    <!-- SEARCH FORM -->
+    <form method="get" action="{% url 'job_list' %}" class="row g-3 mb-4 search-form">
+        <div class="col-md-5">
+            <input type="text"
+                   name="q"
+                   class="form-control"
+                   placeholder="Search by job title or keyword"
+                   value="{{ query }}">
+        </div>
+
+        <div class="col-md-4">
+            <input type="text"
+                   name="location"
+                   class="form-control"
+                   placeholder="Search by location"
+                   value="{{ location }}">
+        </div>
+
+        <div class="col-md-3">
+            <button class="btn btn-primary w-100">
+                Search Jobs
+            </button>
+        </div>
+    </form>
+
+ {# ✅ EXACT MATCH MESSAGE - show only when a search was made #}
+{% if jobs and exact_match %}
+    {% if query or location %}
+    <div class="alert alert-success">
+        🎯 Exact match found for your search.
+    </div>
+    {% endif %}
+{% endif %}
+
+{# ⚠️ PARTIAL MATCH MESSAGE - show only when a search was made #}
+{% if jobs and not exact_match %}
+    {% if query or location %}
+    <div class="alert alert-warning">
+        🔍 Showing related jobs. No exact match found.
+    </div>
+    {% endif %}
+{% endif %}
+
+
+
+    <!-- JOB LIST -->
+    {% if jobs %}
+        <div class="list-group">
+            {% for job in jobs %}
+                <a href="{% url 'job_detail' job.id %}"
+                   class="list-group-item list-group-item-action mb-3 shadow-sm rounded">
+
+                    <h5 class="mb-1 fw-semibold">
+                        {{ job.title }}
+                    </h5>
+
+                    <p class="mb-2 text-muted">
+                        {{ job.description|truncatewords:20 }}
+                    </p>
+
+                    <small class="text-secondary">
+                        📍 {{ job.location }}
+                        {% if job.salary %}
+                            | 💰 {{ job.salary }}
+                        {% endif %}
+                        | 🗓 {{ job.created_at|date:"M d, Y" }}
+                    </small>
+
+                </a>
+            {% endfor %}
+        </div>
+    {% else %}
+        {% if query or location %}
+        <div class="alert alert-info mt-3">
+            No jobs found. Try different keywords or locations.
+        </div>
+        {% endif %}
+    {% endif %}
+
+    <!-- AUTH CHECK -->
+    {% if user.is_authenticated %}
+        {% if user.role == 'employer' %}
+            <a href="{% url 'add_job' %}" class="btn btn-success mt-4">
+                + Post New Job
+            </a>
+        {% endif %}
+    {% else %}
+        <div class="alert alert-warning mt-4">
+            You must
+            <a href="{% url 'register' %}">Register</a> or
+            <a href="{% url 'login' %}">Login</a>
+            to post or apply for jobs.
+        </div>
+    {% endif %}
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,212 @@
+/* ===============================
+   COMMON STYLES
+   =============================== */
+
+.page-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.profile-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.profile-card img {
+    width: 90px;
+    height: 90px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.profile-info h4 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.profile-info p {
+    margin: 4px 0;
+    font-size: 14px;
+}
+
+.form-section {
+    margin-bottom: 25px;
+}
+
+.form-section-title {
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+/* Django form inputs */
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s ease;
+    margin-bottom: 10px;
+}
+
+form button {
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* ===============================
+   LIGHT THEME
+   =============================== */
+
+body:not(.dark-mode) .profile-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+}
+
+body:not(.dark-mode) form input,
+body:not(.dark-mode) form textarea,
+body:not(.dark-mode) form select {
+    background: #ffffff;
+    color: #111827;
+    border: 1px solid #d1d5db;
+}
+
+body:not(.dark-mode) form input:focus,
+body:not(.dark-mode) form textarea:focus,
+body:not(.dark-mode) form select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37,99,235,0.25);
+}
+
+body:not(.dark-mode) form button {
+    background: #2563eb;
+    color: #ffffff;
+    border: none;
+}
+
+/* ===============================
+   DARK THEME (IMPORTANT FIX)
+   =============================== */
+
+body.dark-mode .profile-card {
+    background: #020617;
+    border: 1px solid #1e293b;
+}
+
+body.dark-mode .page-title,
+body.dark-mode .profile-info h4,
+body.dark-mode .profile-info p,
+body.dark-mode .form-section-title {
+    color: #e5e7eb;
+}
+
+/* 🔥 INPUT TEXT VISIBILITY FIX */
+body.dark-mode form input,
+body.dark-mode form textarea,
+body.dark-mode form select {
+    background-color: #0f172a;
+    color: #f8fafc;                /* TEXT COLOR FIX */
+    border: 1px solid #334155;
+}
+
+/* Placeholder */
+body.dark-mode form input::placeholder,
+body.dark-mode form textarea::placeholder {
+    color: #94a3b8;
+}
+
+/* Focus highlight */
+body.dark-mode form input:focus,
+body.dark-mode form textarea:focus,
+body.dark-mode form select:focus {
+    background-color: #020617;
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 2px rgba(56,189,248,0.4);
+}
+
+/* File input */
+body.dark-mode input[type="file"] {
+    background: transparent;
+    color: #f8fafc;
+}
+
+/* Button */
+body.dark-mode form button {
+    background: #38bdf8;
+    color: #020617;
+    border: none;
+}
+
+body.dark-mode form button:hover {
+    background: #0ea5e9;
+}
+
+/* ===== FINAL FIX: COMPANY NAME & DETAILS (DARK MODE) ===== */
+
+body.dark-mode .profile-info h4 {
+    color: #f8fafc !important;   /* Company name visible */
+    font-weight: 700;
+}
+
+body.dark-mode .profile-info p {
+    color: #cbd5f5 !important;   /* Location text */
+}
+
+body.dark-mode .profile-info a {
+    color: #38bdf8 !important;   /* Website link */
+    font-weight: 500;
+}
+
+
+body.dark-mode .profile-info a:hover {
+    text-decoration: underline;
+}
+/* ===== FORCE COMPANY NAME VISIBILITY (OVERRIDE BASE.CSS) ===== */
+
+body.dark-mode .profile-card .profile-info h4 {
+    color: #ffffff !important;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+body.dark-mode .profile-card .profile-info p {
+    color: #cbd5f5 !important;
+}
+
+body.dark-mode .profile-card .profile-info a {
+    color: #38bdf8 !important;
+}
+body.dark-mode .profile-card {
+    background: linear-gradient(145deg, #020617, #020617);
+}
+
+
+/* ===============================
+   RESPONSIVE STYLES
+   =============================== */
+@media (max-width: 576px) {
+    .profile-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile-card img {
+        width: 80px;
+        height: 80px;
+    }
+    .profile-info h4 {
+        font-size: 18px;
+    }
+    .profile-info p {
+        font-size: 13px;
+    }
+}

@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+<style>
+.salary-note{
+  color: #374151;           /* darker gray for visibility */
+  background: rgba(14, 165, 233, 0.06); /* subtle highlight */
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-left: 6px;
+}
+</style>
+
+{% block title %}Add Job | Job Portal{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4">Add Job</h2>
+
+    <!-- Django Messages -->
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <form method="post" class="row g-3">
+        {% csrf_token %}
+
+        <div class="col-md-6">
+            <label class="form-label">Job Title</label>
+            <input type="text" class="form-control" name="title" required>
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label">Location</label>
+            <input type="text" class="form-control" name="location" required>
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label">Job Type</label>
+            <select class="form-control" name="job_type" required>
+                <option value="">Select job type</option>
+                <option value="Full-Time">Full-Time</option>
+                <option value="Part-Time">Part-Time</option>
+                <option value="Internship">Internship</option>
+                <option value="Contract">Contract</option>
+            </select>
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label">Experience Required</label>
+            <select class="form-control" name="experience_level" required>
+                <option value="">Select experience</option>
+                <option value="Fresher">Fresher</option>
+                <option value="1-3 Years">1–3 Years</option>
+                <option value="3-5 Years">3–5 Years</option>
+                <option value="5+ Years">5+ Years</option>
+            </select>
+        </div>
+
+       <div class="col-md-6">
+    <label class="form-label">
+        Salary <span class="salary-note">(per month, optional)</span>
+    </label>
+    <input type="number"
+           class="form-control"
+           name="salary"
+           placeholder="e.g. 30000 or 50000"
+           min="0">
+    <small class="salary-note">
+        Leave blank if salary is negotiable
+    </small>
+</div>
+
+        <div class="col-12">
+            <label class="form-label">Job Description</label>
+            <textarea class="form-control" name="description" rows="4" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Requirements</label>
+            <textarea name="requirements" class="form-control" rows="4"
+                placeholder="Skills, experience, tools required"></textarea>
+        </div>
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Post Job</button>
+            <a href="{% url 'job_list' %}" class="btn btn-secondary">Back to Jobs</a>
+        </div>
+
+    </form>
+</div>
+{% endblock %}

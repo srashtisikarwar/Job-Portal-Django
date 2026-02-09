@@ -1,0 +1,144 @@
+/* ===============================
+   REGISTER PAGE – COMMON STYLES
+================================ */
+.register-wrapper {
+    width: 100%;
+}
+
+/* Card */
+.register-card {
+    max-width: 600px;
+    width: 100%;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+/* Headings */
+.register-card h1 {
+    font-weight: 700;
+}
+
+/* Paragraph text */
+.register-card p {
+    font-size: 0.95rem;
+}
+
+/* Form fields spacing */
+.register-card form p {
+    margin-bottom: 1rem;
+}
+
+/* Django form inputs */
+.register-card input,
+.register-card select,
+.register-card textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+/* Submit button */
+.register-card button {
+    padding: 10px;
+    font-weight: 600;
+}
+
+/* Illustration image */
+.register-illustration {
+    width: 200px;
+    opacity: 0.6;
+}
+
+/* ===============================
+   LIGHT THEME (DEFAULT)
+================================ */
+.theme-wrapper .register-card {
+    background-color: #ffffff;
+    color: #212529;
+}
+
+.theme-wrapper .register-card input,
+.theme-wrapper .register-card select,
+.theme-wrapper .register-card textarea {
+    background-color: #ffffff;
+    color: #212529;
+    border: 1px solid #ced4da;
+}
+
+.theme-wrapper .register-card input::placeholder {
+    color: #999;
+}
+
+.theme-wrapper .register-card a {
+    color: #0d6efd;
+    text-decoration: none;
+}
+
+.theme-wrapper .register-card a:hover {
+    text-decoration: underline;
+}
+
+.theme-wrapper .text-muted {
+    color: #6c757d !important;
+}
+
+/* ===============================
+   DARK THEME
+================================ */
+.theme-wrapper.dark-theme .register-card {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border: 1px solid #333;
+}
+
+/* Inputs */
+.theme-wrapper.dark-theme .register-card input,
+.theme-wrapper.dark-theme .register-card select,
+.theme-wrapper.dark-theme .register-card textarea {
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border: 1px solid #444;
+}
+
+.theme-wrapper.dark-theme .register-card input::placeholder {
+    color: #aaa;
+}
+
+/* Links */
+.theme-wrapper.dark-theme .register-card a {
+    color: #4dabff;
+}
+
+.theme-wrapper.dark-theme .register-card a:hover {
+    color: #82c7ff;
+}
+
+/* Muted text fix (IMPORTANT) */
+.theme-wrapper.dark-theme .text-muted {
+    color: #b0b0b0 !important;
+}
+
+/* Alerts */
+.theme-wrapper.dark-theme .alert-danger {
+    background-color: #3a1e1e;
+    color: #ffb3b3;
+    border-color: #662222;
+}
+
+/* Illustration */
+.theme-wrapper.dark-theme .register-illustration {
+    opacity: 0.75;
+}
+
+/* ===============================
+   MOBILE RESPONSIVE
+================================ */
+@media (max-width: 576px) {
+    .register-card {
+        padding: 2rem !important;
+    }
+
+    .register-illustration {
+        width: 150px;
+    }
+}

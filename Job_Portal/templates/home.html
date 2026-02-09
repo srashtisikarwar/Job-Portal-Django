@@ -1,0 +1,604 @@
+{% extends "base.html" %}
+{% block title %}Home | Job Portal{% endblock %}
+{% load static %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% block content %}
+
+<!-- HERO SECTION -->
+<div class="hero-section text-white py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <h1 class="display-4 fw-bold mb-3">Find Your Next Opportunity</h1>
+                <p class="lead mb-4">Connect with top employers and discover careers that match your skills and ambitions. Join thousands of professionals on our platform.</p>
+                <div class="d-flex gap-3 flex-wrap">
+                    {% if not user.is_authenticated %}
+                        <a href="{% url 'register' %}" class="btn btn-light btn-lg fw-semibold">Get Started</a>
+                        <a href="{% url 'job_list' %}" class="btn btn-outline-light btn-lg fw-semibold">Browse Jobs</a>
+                    {% else %}
+                        <a href="{% url 'job_list' %}" class="btn btn-light btn-lg fw-semibold">Search Jobs</a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="search-card rounded-3 p-4 shadow-lg">
+                    <h5 class="fw-bold mb-4">Quick Job Search</h5>
+                    <form method="get" action="{% url 'job_list' %}" class="search-form">
+                        <div class="mb-3">
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-text border-0">
+                                    <i class="fas fa-briefcase text-primary"></i>
+                                </span>
+                                <input type="text"
+                                       name="q"
+                                       class="form-control border-0"
+                                       placeholder="Job title, skills, or company"
+                                       value="{{ request.GET.q }}" />
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-text border-0">
+                                    <i class="fas fa-map-marker-alt text-primary"></i>
+                                </span>
+                                <input type="text"
+                                       name="location"
+                                       class="form-control border-0"
+                                       placeholder="City or location"
+                                       value="{{ request.GET.location }}" />
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-lg w-100 fw-semibold" type="submit">
+                            <i class="fas fa-search me-2"></i>Search Jobs
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- STATS SECTION -->
+<div class="stats-section py-5">
+    <div class="container">
+        <div class="row text-center g-4">
+            <div class="col-md-4">
+                <div class="stat-card h-100">
+                    <div class="stat-icon text-primary mb-3">
+                        <i class="fas fa-briefcase fa-3x"></i>
+                    </div>
+                    <h3 class="display-6 fw-bold">500+</h3>
+                    <p class="fs-5">Active Job Openings</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stat-card h-100">
+                    <div class="stat-icon text-success mb-3">
+                        <i class="fas fa-building fa-3x"></i>
+                    </div>
+                    <h3 class="display-6 fw-bold">200+</h3>
+                    <p class="fs-5">Top Employers</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stat-card h-100">
+                    <div class="stat-icon text-info mb-3">
+                        <i class="fas fa-users fa-3x"></i>
+                    </div>
+                    <h3 class="display-6 fw-bold">1000+</h3>
+                    <p class="fs-5">Successful Hires</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- HOW IT WORKS SECTION -->
+<div class="how-it-works-section py-5">
+    <div class="container">
+        <h2 class="text-center fw-bold mb-5">How It Works</h2>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3 text-center">
+                <div class="how-step">
+                    <div class="step-number bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 60px; height: 60px;">
+                        <h5 class="mb-0">1</h5>
+                    </div>
+                    <h5 class="fw-bold">Create Account</h5>
+                    <p class="text-muted">Sign up in seconds and build your professional profile</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 text-center">
+                <div class="how-step">
+                    <div class="step-number bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 60px; height: 60px;">
+                        <h5 class="mb-0">2</h5>
+                    </div>
+                    <h5 class="fw-bold">Search & Filter</h5>
+                    <p class="text-muted">Find jobs matching your skills and experience</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 text-center">
+                <div class="how-step">
+                    <div class="step-number bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 60px; height: 60px;">
+                        <h5 class="mb-0">3</h5>
+                    </div>
+                    <h5 class="fw-bold">Apply Easily</h5>
+                    <p class="text-muted">Submit your application instantly</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 text-center">
+                <div class="how-step">
+                    <div class="step-number bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 60px; height: 60px;">
+                        <h5 class="mb-0">4</h5>
+                    </div>
+                    <h5 class="fw-bold">Get Hired</h5>
+                    <p class="text-muted">Connect with employers and start your career</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FEATURED JOBS SECTION -->
+<div class="featured-jobs-section py-5">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-5">
+            <div>
+                <h2 class="fw-bold mb-2">Featured Opportunities</h2>
+                <p class="text-muted">Handpicked jobs from leading companies</p>
+            </div>
+            <a href="{% url 'job_list' %}" class="btn btn-primary">View All Jobs</a>
+        </div>
+
+        {% if jobs %}
+            <div class="row g-4">
+                {% for job in jobs|slice:":6" %}
+                    <div class="col-md-6 col-lg-4">
+                        <div class="job-card card h-100 border-0 shadow-sm">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <div>
+                                        <h5 class="card-title fw-bold mb-1">{{ job.title }}</h5>
+                                        <p class="text-muted small mb-0">
+                                            <i class="fas fa-building me-1"></i>{{ job.company }}
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <p class="card-text small mb-3">{{ job.description|truncatewords:20 }}</p>
+                                
+                                <div class="mb-3">
+                                    <span class="badge bg-light text-dark me-2 mb-2">
+                                        <i class="fas fa-map-marker-alt me-1"></i>{{ job.location }}
+                                    </span>
+                                    <span class="badge bg-light text-dark mb-2">
+                                        <i class="fas fa-money-bill me-1"></i>{{ job.salary }}
+                                    </span>
+                                </div>
+                                
+                                <a href="{% url 'job_detail' job.id %}" class="btn btn-primary btn-sm w-100">
+                                    View Details <i class="fas fa-arrow-right ms-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="alert alert-info" role="alert">
+                <i class="fas fa-info-circle me-2"></i>No jobs available right now. Please check back soon!
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+<!-- CTA SECTION FOR EMPLOYERS -->
+<div class="employer-cta-section py-5 text-white">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 mb-4 mb-lg-0">
+                <h3 class="fw-bold mb-2">Are You an Employer?</h3>
+                <p class="lead mb-0">Post your job openings and connect with qualified candidates. Start building your dream team today.</p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+                {% if user.is_authenticated and user.is_employer %}
+                    <a href="{% url 'add_job' %}" class="btn btn-light btn-lg fw-semibold">Post a Job</a>
+                {% else %}
+                    <a href="{% url 'register' %}" class="btn btn-light btn-lg fw-semibold">Register as Employer</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- TRUST & SECURITY SECTION -->
+<div class="trust-section py-5">
+    <div class="container">
+        <h2 class="text-center fw-bold mb-5">Why Choose Us</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="text-center">
+                    <div class="feature-icon bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 70px; height: 70px;">
+                        <i class="fas fa-shield-alt fa-2x"></i>
+                    </div>
+                    <h5 class="fw-bold">Safe & Secure</h5>
+                    <p class="text-muted">Your data is protected with industry-leading security standards</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="text-center">
+                    <div class="feature-icon bg-success text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 70px; height: 70px;">
+                        <i class="fas fa-users fa-2x"></i>
+                    </div>
+                    <h5 class="fw-bold">Verified Employers</h5>
+                    <p class="text-muted">All employers are verified to ensure quality opportunities</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="text-center">
+                    <div class="feature-icon bg-info text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 70px; height: 70px;">
+                        <i class="fas fa-headset fa-2x"></i>
+                    </div>
+                    <h5 class="fw-bold">24/7 Support</h5>
+                    <p class="text-muted">Our dedicated team is always ready to help you</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+/* ========== LIGHT THEME ========== */
+.hero-section {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+}
+
+.search-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    background-color: #ffffff !important;
+    color: #1a1a1a !important;
+    border: 1px solid #e8eef7 !important;
+    border-radius: 12px;
+}
+
+.search-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(102, 126, 234, 0.15) !important;
+}
+
+.search-card h5 {
+    color: #1a1a1a !important;
+    font-weight: 600;
+}
+
+.search-card .form-control {
+    background-color: #f8fafc !important;
+    color: #1a1a1a !important;
+    border: 1px solid #e2e8f0 !important;
+}
+
+.search-card .form-control:focus {
+    background-color: #ffffff !important;
+    color: #1a1a1a !important;
+    border-color: #667eea !important;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25) !important;
+}
+
+.search-card .form-control::placeholder {
+    color: #a0aec0 !important;
+}
+
+.search-card .input-group-text {
+    background-color: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    color: #667eea !important;
+}
+
+/* Stats Section */
+.stats-section {
+    background: linear-gradient(to bottom, #ffffff 0%, #f8fafc 100%) !important;
+    transition: background-color 0.3s ease;
+}
+
+.stat-card {
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    background: #ffffff !important;
+    color: #1a1a1a !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e8eef7 !important;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.12);
+    border-color: #667eea !important;
+}
+
+.stat-card h3 {
+    color: #667eea !important;
+    font-weight: 700;
+}
+
+.stat-card p {
+    color: #64748b !important;
+    font-weight: 500;
+}
+
+/* How It Works Section */
+.how-it-works-section {
+    background: linear-gradient(to bottom, #f8fafc 0%, #ffffff 100%) !important;
+    color: #1a1a1a !important;
+}
+
+.how-it-works-section h2 {
+    color: #1a1a1a !important;
+    font-weight: 700;
+}
+
+.how-step {
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+    background-color: #ffffff;
+    color: #1a1a1a !important;
+    border: 1px solid #e8eef7;
+    transition: all 0.3s ease;
+}
+
+.how-step:hover {
+    transform: translateY(-8px);
+    background-color: #eff6ff;
+    border-color: #667eea;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.1);
+}
+
+.how-step h5 {
+    color: #1a1a1a !important;
+    font-weight: 600;
+}
+
+.how-step p {
+    color: #64748b !important;
+}
+
+/* Featured Jobs Section */
+.featured-jobs-section {
+    background: linear-gradient(to bottom, #ffffff 0%, #f8fafc 100%) !important;
+}
+
+.featured-jobs-section h2 {
+    color: #1a1a1a !important;
+    font-weight: 700;
+}
+
+.featured-jobs-section .text-muted {
+    color: #64748b !important;
+}
+
+.job-card {
+    transition: all 0.3s ease;
+    background-color: #ffffff !important;
+    color: #1a1a1a !important;
+    border: 1px solid #e8eef7 !important;
+    border-radius: 12px;
+}
+
+.job-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.12) !important;
+    border-color: #667eea !important;
+}
+
+.job-card .card-title {
+    color: #1a1a1a !important;
+    font-weight: 600;
+}
+
+.job-card .text-muted {
+    color: #64748b !important;
+}
+
+.job-card .badge {
+    background-color: #f1f5f9 !important;
+    color: #334155 !important;
+    border: 1px solid #e2e8f0;
+    font-weight: 500;
+}
+
+/* CTA Section - Employer */
+.employer-cta-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: #ffffff !important;
+}
+
+.employer-cta-section h3 {
+    color: #ffffff !important;
+    font-weight: 700;
+}
+
+.employer-cta-section p {
+    color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Trust Section */
+.trust-section {
+    background: linear-gradient(to bottom, #f8fafc 0%, #ffffff 100%) !important;
+}
+
+.trust-section h2 {
+    color: #1a1a1a !important;
+    font-weight: 700;
+}
+
+.trust-section h5 {
+    color: #1a1a1a !important;
+    font-weight: 600;
+}
+
+.trust-section .text-muted {
+    color: #64748b !important;
+}
+
+.feature-icon {
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+}
+
+/* ========== DARK THEME ========== */
+.theme-wrapper.dark-theme .hero-section {
+    background: linear-gradient(135deg, #4a5fa3 0%, #5a3f6f 100%) !important;
+    color: #e0e0e0 !important;
+}
+
+.theme-wrapper.dark-theme .search-card {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+    border: 1px solid #333 !important;
+}
+
+.theme-wrapper.dark-theme .search-card h5 {
+    color: #e0e0e0 !important;
+}
+
+.theme-wrapper.dark-theme .search-card .form-control {
+    background-color: #2b2b2b !important;
+    color: #e0e0e0 !important;
+    border: 1px solid #444 !important;
+}
+
+.theme-wrapper.dark-theme .search-card .form-control:focus {
+    background-color: #2b2b2b !important;
+    color: #e0e0e0 !important;
+    border-color: #667eea !important;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25) !important;
+}
+
+.theme-wrapper.dark-theme .search-card .form-control::placeholder {
+    color: #999 !important;
+}
+
+.theme-wrapper.dark-theme .search-card .input-group-text {
+    background-color: #2b2b2b !important;
+    border: 1px solid #444 !important;
+    color: #7a9dff !important;
+}
+
+.theme-wrapper.dark-theme .stats-section {
+    background: #0d0d0d !important;
+}
+
+.theme-wrapper.dark-theme .stat-card {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    border: 1px solid #333 !important;
+}
+
+.theme-wrapper.dark-theme .stat-card:hover {
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+    border-color: #667eea !important;
+}
+
+.theme-wrapper.dark-theme .stat-card h3 {
+    color: #7a9dff !important;
+}
+
+.theme-wrapper.dark-theme .stat-card p {
+    color: #b0b0b0 !important;
+}
+
+.theme-wrapper.dark-theme .how-it-works-section {
+    background: #121212 !important;
+    color: #e0e0e0 !important;
+}
+
+.theme-wrapper.dark-theme .how-it-works-section h2 {
+    color: #e0e0e0 !important;
+}
+
+.theme-wrapper.dark-theme .how-step {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+    border: 1px solid #333 !important;
+}
+
+.theme-wrapper.dark-theme .how-step:hover {
+    background-color: #2b2b2b;
+    border-color: #667eea !important;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+}
+
+.theme-wrapper.dark-theme .how-step h5 {
+    color: #e0e0e0 !important;
+}
+
+.theme-wrapper.dark-theme .how-step p {
+    color: #b0b0b0 !important;
+}
+
+.theme-wrapper.dark-theme .featured-jobs-section {
+    background: #0d0d0d !important;
+}
+
+.theme-wrapper.dark-theme .featured-jobs-section h2 {
+    color: #e0e0e0 !important;
+}
+
+.theme-wrapper.dark-theme .featured-jobs-section .text-muted {
+    color: #b0b0b0 !important;
+}
+
+.theme-wrapper.dark-theme .job-card {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+    border: 1px solid #333 !important;
+}
+
+.theme-wrapper.dark-theme .job-card:hover {
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2) !important;
+    border-color: #667eea !important;
+}
+
+.theme-wrapper.dark-theme .job-card .card-title {
+    color: #e0e0e0 !important;
+}
+
+.theme-wrapper.dark-theme .job-card .text-muted {
+    color: #b0b0b0 !important;
+}
+
+.theme-wrapper.dark-theme .job-card .badge {
+    background-color: #2b2b2b !important;
+    color: #b0b0b0 !important;
+    border: 1px solid #444 !important;
+}
+
+.theme-wrapper.dark-theme .employer-cta-section {
+    background: linear-gradient(135deg, #4a5fa3 0%, #5a3f6f 100%) !important;
+    color: #e0e0e0 !important;
+}
+
+.theme-wrapper.dark-theme .employer-cta-section h3,
+.theme-wrapper.dark-theme .employer-cta-section p {
+    color: #e0e0e0 !important;
+}
+
+.theme-wrapper.dark-theme .trust-section {
+    background: #0d0d0d !important;
+}
+
+.theme-wrapper.dark-theme .trust-section h2,
+.theme-wrapper.dark-theme .trust-section h5 {
+    color: #e0e0e0 !important;
+}
+
+.theme-wrapper.dark-theme .trust-section .text-muted {
+    color: #b0b0b0 !important;
+}
+</style>
+
+{% endblock %}
