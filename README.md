@@ -81,8 +81,7 @@ Resume upload functionality
 ### ☀️ Light Theme
 
 **Home Page**  
-![Home Page](screenshots/light_theme/home.png
-<img src="/docs/logo.png" alt="My cool logo"/>
+<img src="" alt="My cool logo"/>
 
 **Login Page**  
 ![Login Page](screenshots/light_theme/login.png)
