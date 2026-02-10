@@ -83,7 +83,7 @@ Resume upload functionality
 
 
 **Login Page**  
-![Home Page](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+![Home Page](https://github.com/srashtisikarwar/Job-Portal-Django/blob/main/screenshots/light_theme/home.png)
 
 **Register Page**  
 ![Register Page](https://raw.githubusercontent.com/srashtisikarwar/Job-Portal-Django/main/screenshots/light_theme/register.png)
