@@ -77,69 +77,69 @@ Role-based dashboards
 
 Resume upload functionality
 
-🖼️ Screenshots – Light Theme
+## 🖼️ Screenshots – Light Theme
 ### ☀️ Light Theme
 
-#### Home Page
+**Home Page**  
 ![Home Page](screenshots/light_theme/home.png)
 
-#### Login Page
+**Login Page**  
 ![Login Page](screenshots/light_theme/login.png)
 
-#### Register Page
+**Register Page**  
 ![Register Page](screenshots/light_theme/register.png)
 
-#### Job Listings
+**Job Listings**  
 ![Job Listings](screenshots/light_theme/jobs.png)
 
-#### Job Details
+**Job Details**  
 ![Job Details](screenshots/light_theme/jobs_details.png)
 
-#### Apply Job
+**Apply Job**  
 ![Apply Job](screenshots/light_theme/jobs_apply.png)
 
-#### Candidate Dashboard
+**Candidate Dashboard**  
 ![Candidate Dashboard](screenshots/light_theme/candidate_dashboard.png)
 
-#### Employer Dashboard
+**Employer Dashboard**  
 ![Employer Dashboard](screenshots/light_theme/employer_dashboard.png)
 
-#### Post Job
+**Post Job**  
 ![Post Job](screenshots/light_theme/post_jobs.png)
 
-#### Admin Dashboard
+**Admin Dashboard**  
 ![Admin Dashboard](screenshots/light_theme/admin.png)
 
 
-🖼️ Screenshots – Dark Theme
+## 🖼️ Screenshots – Dark Theme
 ### 🌙 Dark Theme
 
-#### Home Page
+**Home Page**  
 ![Home Page](screenshots/dark_theme/home.png)
 
-#### Login Page
+**Login Page**  
 ![Login Page](screenshots/dark_theme/login.png)
 
-#### Register Page
+**Register Page**  
 ![Register Page](screenshots/dark_theme/register.png)
 
-#### Job Listings
+**Job Listings**  
 ![Job Listings](screenshots/dark_theme/jobs.png)
 
-#### Job Details
+**Job Details**  
 ![Job Details](screenshots/dark_theme/job_details.png)
 
-#### Apply Job
+**Apply Job**  
 ![Apply Job](screenshots/dark_theme/jobs_apply.png)
 
-#### Candidate Dashboard
+**Candidate Dashboard**  
 ![Candidate Dashboard](screenshots/dark_theme/candidate_dashboard.png)
 
-#### Employer Dashboard
+**Employer Dashboard**  
 ![Employer Dashboard](screenshots/dark_theme/employer_dashboard.png)
 
-#### Post Job
+**Post Job**  
 ![Post Job](screenshots/dark_theme/post_job.png)
 
-#### Loading Screen
+**Loading Screen**  
 ![Loading](screenshots/dark_theme/loading.png)
