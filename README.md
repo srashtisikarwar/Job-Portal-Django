@@ -81,7 +81,8 @@ Resume upload functionality
 ### ☀️ Light Theme
 
 **Home Page**  
-<img src="https://github.com/srashtisikarwar/Job-Portal-Django/blob/main/screenshots/light_theme/home.png" alt="My cool logo"/>
+![Home Page](screenshots/light_theme/home.png)
+
 **Login Page**  
 ![Login Page](screenshots/light_theme/login.png)
 
