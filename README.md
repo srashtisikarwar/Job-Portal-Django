@@ -80,10 +80,8 @@ Resume upload functionality
 ## 🖼️ Screenshots – Light Theme
 
 **Home Page**  
+![image alt]{https://github.com/srashtisikarwar/Job-Portal-Django/blob/128f64340801edf180d46dd26cc5819e195f09b1/home.png}
 
-
-**Login Page**  
-![Home Page](https://github.com/srashtisikarwar/Job-Portal-Django/blob/main/screenshots/light_theme/home.png)
 
 **Register Page**  
 ![Register Page](https://raw.githubusercontent.com/srashtisikarwar/Job-Portal-Django/main/screenshots/light_theme/register.png)
