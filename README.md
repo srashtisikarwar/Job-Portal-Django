@@ -78,14 +78,9 @@ Role-based dashboards
 Resume upload functionality
 
 ## 🖼️ Screenshots – Light Theme
-### ☀️ Light Theme
 
 **Home Page**  
-## 🖼️ Screenshots – Light Theme
-
-**Home Page**  
-![Home Page](https://raw.githubusercontent.com/srashtisikarwar/Job-Portal-Django/main/screenshots/light_theme/home.png
-)
+![Home Page](https://raw.githubusercontent.com/srashtisikarwar/Job-Portal-Django/main/screenshots/light_theme/home.png)
 
 **Login Page**  
 ![Login Page](https://raw.githubusercontent.com/srashtisikarwar/Job-Portal-Django/main/screenshots/light_theme/login.png)
@@ -93,58 +88,56 @@ Resume upload functionality
 **Register Page**  
 ![Register Page](https://raw.githubusercontent.com/srashtisikarwar/Job-Portal-Django/main/screenshots/light_theme/register.png)
 
-
 **Job Listings**  
-![Job Listings](screenshots/light_theme/jobs.png)
+![Job Listings](https://raw.githubusercontent.com/srashtisikarwar/Job-Portal-Django/main/screenshots/light_theme/jobs.png)
 
 **Job Details**  
-![Job Details](screenshots/light_theme/jobs_details.png)
+![Job Details](https://raw.githubusercontent.com/srashtisikarwar/Job-Portal-Django/main/screenshots/light_theme/jobs_details.png)
 
 **Apply Job**  
-![Apply Job](screenshots/light_theme/jobs_apply.png)
+![Apply Job](https://raw.githubusercontent.com/srashtisikarwar/Job-Portal-Django/main/screenshots/light_theme/jobs_apply.png)
 
 **Candidate Dashboard**  
-![Candidate Dashboard](screenshots/light_theme/candidate_dashboard.png)
+![Candidate Dashboard](https://raw.githubusercontent.com/srashtisikarwar/Job-Portal-Django/main/screenshots/light_theme/candidate_dashboard.png)
 
 **Employer Dashboard**  
-![Employer Dashboard](screenshots/light_theme/employer_dashboard.png)
+![Employer Dashboard](https://raw.githubusercontent.com/srashtisikarwar/Job-Portal-Django/main/screenshots/light_theme/employer_dashboard.png)
 
 **Post Job**  
-![Post Job](screenshots/light_theme/post_jobs.png)
+![Post Job](https://raw.githubusercontent.com/srashtisikarwar/Job-Portal-Django/main/screenshots/light_theme/post_jobs.png)
 
 **Admin Dashboard**  
-![Admin Dashboard](screenshots/light_theme/admin.png)
+![Admin Dashboard](https://raw.githubusercontent.com/srashtisikarwar/Job-Portal-Django/main/screenshots/light_theme/admin.png)
 
 
 ## 🖼️ Screenshots – Dark Theme
-### 🌙 Dark Theme
 
 **Home Page**  
-![Home Page](screenshots/dark_theme/home.png)
+![Home Page](https://raw.githubusercontent.com/srashtisikarwar/Job-Portal-Django/main/screenshots/dark_theme/home.png)
 
 **Login Page**  
-![Login Page](screenshots/dark_theme/login.png)
+![Login Page](https://raw.githubusercontent.com/srashtisikarwar/Job-Portal-Django/main/screenshots/dark_theme/login.png)
 
 **Register Page**  
-![Register Page](screenshots/dark_theme/register.png)
+![Register Page](https://raw.githubusercontent.com/srashtisikarwar/Job-Portal-Django/main/screenshots/dark_theme/register.png)
 
 **Job Listings**  
-![Job Listings](screenshots/dark_theme/jobs.png)
+![Job Listings](https://raw.githubusercontent.com/srashtisikarwar/Job-Portal-Django/main/screenshots/dark_theme/jobs.png)
 
 **Job Details**  
-![Job Details](screenshots/dark_theme/job_details.png)
+![Job Details](https://raw.githubusercontent.com/srashtisikarwar/Job-Portal-Django/main/screenshots/dark_theme/job_details.png)
 
 **Apply Job**  
-![Apply Job](screenshots/dark_theme/jobs_apply.png)
+![Apply Job](https://raw.githubusercontent.com/srashtisikarwar/Job-Portal-Django/main/screenshots/dark_theme/jobs_apply.png)
 
 **Candidate Dashboard**  
-![Candidate Dashboard](screenshots/dark_theme/candidate_dashboard.png)
+![Candidate Dashboard](https://raw.githubusercontent.com/srashtisikarwar/Job-Portal-Django/main/screenshots/dark_theme/candidate_dashboard.png)
 
 **Employer Dashboard**  
-![Employer Dashboard](screenshots/dark_theme/employer_dashboard.png)
+![Employer Dashboard](https://raw.githubusercontent.com/srashtisikarwar/Job-Portal-Django/main/screenshots/dark_theme/employer_dashboard.png)
 
 **Post Job**  
-![Post Job](screenshots/dark_theme/post_job.png)
+![Post Job](https://raw.githubusercontent.com/srashtisikarwar/Job-Portal-Django/main/screenshots/dark_theme/post_job.png)
 
 **Loading Screen**  
-![Loading](screenshots/dark_theme/loading.png)
+![Loading](https://raw.githubusercontent.com/srashtisikarwar/Job-Portal-Django/main/screenshots/dark_theme/loading.png)
