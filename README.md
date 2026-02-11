@@ -38,33 +38,60 @@ requirements.txt
 screenshots/ # Screenshots folder
 
 ---
+1. **Clone the repository**
+bash
+git clone https://github.com/...
+Because bash is not inside triple backticks, Markdown breaks from that point.
+When Markdown breaks, images below it may not render correctly in VS Code or GitHub.
+
+✅ FIX YOUR README (Very Important)
+Replace your Installation & Setup section with this properly formatted version:
 
 ## ⚙️ Installation & Setup
 
 1. **Clone the repository**
+
 ```bash
 git clone https://github.com/srashtisikarwar/Job-Portal-Django.git
-Navigate to the project folder
-
 cd Job_Portal
-Create & activate virtual environment
+```
 
+2. **Create & activate virtual environment**
+
+```bash
 python -m venv myenv
+
 # Windows
 myenv\Scripts\activate
+
 # Mac/Linux
 source myenv/bin/activate
-Install dependencies
+```
 
+3. **Install dependencies**
+
+```bash
 pip install -r requirements.txt
-Run migrations
+```
 
+4. **Run migrations**
+
+```bash
 python manage.py migrate
-Start the server
+```
 
+5. **Start the server**
+
+```bash
 python manage.py runserver
-Open in browser
+```
+
+6. **Open in browser**
+
+```
 http://127.0.0.1:8000/
+```
+
 
 👩‍💻 Author
 Srashti Sikarwar
@@ -79,26 +106,21 @@ Resume upload functionality
 
 ## 🖼️ Screenshots – Light Theme (Thumbnails)
 
-<<<<<<< HEAD
-**Home Page**  
-![Home Page](https://github.com/srashtisikarwar/Job-Portal-Django/blob/128f64340801edf180d46dd26cc5819e195f09b1/home.png)
-=======
 | Home Page | Login Page | Register Page |
 |-----------|------------|---------------|
-| <img src="screenshots/light_theme/home.png" width="150"> | <img src="screenshots/light_theme/login.png" width="150"> | <img src="screenshots/light_theme/register.png" width="150"> |
->>>>>>> 555a419 (Add thumbnail gallery version for screenshots)
+| [<img src="screenshots/light_theme/home.png" width="150">](screenshots/light_theme/home.png) | [<img src="screenshots/light_theme/login.png" width="150">](screenshots/light_theme/login.png) | [<img src="screenshots/light_theme/register.png" width="150">](screenshots/light_theme/register.png) |
 
 | Job Listings | Job Details | Apply Job |
 |--------------|------------|-----------|
-| <img src="screenshots/light_theme/jobs.png" width="150"> | <img src="screenshots/light_theme/jobs_details.png" width="150"> | <img src="screenshots/light_theme/jobs_apply.png" width="150"> |
+| [<img src="screenshots/light_theme/jobs.png" width="150">](screenshots/light_theme/jobs.png) | [<img src="screenshots/light_theme/jobs_details.png" width="150">](screenshots/light_theme/jobs_details.png) | [<img src="screenshots/light_theme/jobs_apply.png" width="150">](screenshots/light_theme/jobs_apply.png) |
 
 | Candidate Dashboard | Employer Dashboard | Post Job |
 |-------------------|-----------------|---------|
-| <img src="screenshots/light_theme/candidate_dashboard.png" width="150"> | <img src="screenshots/light_theme/employer_dashboard.png" width="150"> | <img src="screenshots/light_theme/post_jobs.png" width="150"> |
+| [<img src="screenshots/light_theme/candidate_dashboard.png" width="150">](screenshots/light_theme/candidate_dashboard.png) | [<img src="screenshots/light_theme/employer_dashboard.png" width="150">](screenshots/light_theme/employer_dashboard.png) | [<img src="screenshots/light_theme/post_jobs.png" width="150">](screenshots/light_theme/post_jobs.png) |
 
 | Admin Dashboard |  |  |
 |----------------|--|--|
-| <img src="screenshots/light_theme/admin.png" width="150"> |  |  |
+| [<img src="screenshots/light_theme/admin.png" width="150">](screenshots/light_theme/admin.png) |  |  |
 
 ---
 
