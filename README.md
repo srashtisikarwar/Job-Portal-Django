@@ -38,14 +38,7 @@ requirements.txt
 screenshots/ # Screenshots folder
 
 ---
-1. **Clone the repository**
-bash
-git clone https://github.com/...
-Because bash is not inside triple backticks, Markdown breaks from that point.
-When Markdown breaks, images below it may not render correctly in VS Code or GitHub.
 
-✅ FIX YOUR README (Very Important)
-Replace your Installation & Setup section with this properly formatted version:
 
 ## ⚙️ Installation & Setup
 
