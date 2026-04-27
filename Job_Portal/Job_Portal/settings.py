@@ -26,8 +26,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-1bdhwl&e8=-j&!g+rnb3_s(1!36#d4hm3r0-9)*97q&p^x^n6f'
+import os
 
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-local-key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -131,7 +132,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
