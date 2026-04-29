@@ -79,8 +79,17 @@ TEMPLATES = [
         },
     },
 ]
+
+
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'staticfiles']
+
+# Folder where Django will collect static files (Render needs this)
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Optional: only if you have a static folder
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = 'home'
