@@ -101,7 +101,7 @@ Resume upload functionality
 
 | Home Page | Login Page | Register Page |
 |-----------|------------|---------------|
-| [<img src="screenshots/light_theme/home.png" width="150">](screenshots/light_theme/home.png) | [<img src="screenshots/light_theme/login.png" width="150">](screenshots/light_theme/login.png) | [<img src="screenshots/light_theme/register.png" width="150">](screenshots/light_theme/register.png) |
+| [<img src="./screenshots/light_theme/home.png" width="150">](screenshots/light_theme/home.png) | [<img src="screenshots/light_theme/login.png" width="150">](screenshots/light_theme/login.png) | [<img src="screenshots/light_theme/register.png" width="150">](screenshots/light_theme/register.png) |
 
 | Job Listings | Job Details | Apply Job |
 |--------------|------------|-----------|
