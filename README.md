@@ -84,7 +84,13 @@ python manage.py runserver
 ```
 http://127.0.0.1:8000/
 ```
+This project can be deployed on:
 
+* Render
+## Live Demo
+
+🌐 Live Application:
+https://job-portal-django-1-pr9m.onrender.com
 
 👩‍💻 Author
 Srashti Sikarwar
